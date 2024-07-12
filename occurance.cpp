@@ -20,7 +20,7 @@ void occurance(vector<int> arr){
         if(arr[i]!=arr[i+1]){
             temp.push_back(arr[i]);
         }
-            
+            s
     }
     printArr(temp);
 }

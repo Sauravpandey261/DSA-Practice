@@ -68,7 +68,7 @@ void nQueen(vector<vector<char>> board, int row)
 int main()
 {
     vector<vector<char>> board;
-    int n = 4;
+    int n = 5;
     for (int i = 0; i < n; i++)
     {
         vector<char> newRow;
