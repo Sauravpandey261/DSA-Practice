@@ -16,7 +16,7 @@ int main() {
     int n = sizeof(arr)/sizeof(arr[0]);
     int key = 2;
 
-    cout << "Indices of key " << key << " are: ";
+    cout << "Indices of key " << key << " are:  ";
     findAllOccurrences(arr, n, 0, key);
     cout << endl;
 
