@@ -13,19 +13,13 @@ void printBoard(vector<vector<char>> board)
         }
         cout << endl;
     }
-    cout << "---------------------\n";
+    cout << "---------------------------\n";
 }
+
 bool isSafe(vector<vector<char>> board, int row, int col)
 {
     int n = board.size();
-    // horizontal
-    for (int j = 0; j < col; j++)
-    {
-        if (board[row][j] == 'Q')
-        {
-            return false;
-        }
-    }
+
     // vertical
     for (int i = 0; i < row; i++)
     {
@@ -34,7 +28,6 @@ bool isSafe(vector<vector<char>> board, int row, int col)
             return false;
         }
     }
-
     // diagonal left
     for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
     {
@@ -43,6 +36,7 @@ bool isSafe(vector<vector<char>> board, int row, int col)
             return false;
         }
     }
+
     // diagonal right
     for (int i = row, j = col; i >= 0 && j <= n; i--, j++)
     {
@@ -53,33 +47,28 @@ bool isSafe(vector<vector<char>> board, int row, int col)
     }
     return true;
 }
-int nQueen(vector<vector<char>> board, int row)
+void nQueen(vector<vector<char>> board, int row)
 {
-    
     int n = board.size();
     if (row == n)
     {
         printBoard(board);
-        return 1;
+        return;
     }
-    int count=0;
     for (int j = 0; j < n; j++)
     {
         if (isSafe(board, row, j))
         {
             board[row][j] = 'Q';
-            count+= nQueen(board, row + 1);
+            nQueen(board, row + 1);
             board[row][j] = '.';
         }
     }
-    return count;  //no of possible sol in each level
 }
-
 int main()
 {
-vector<vector<char>> board;
-    int ans;
-    int n = 6;
+    vector<vector<char>> board;
+    int n = 4;
     for (int i = 0; i < n; i++)
     {
         vector<char> newRow;
@@ -87,9 +76,8 @@ vector<vector<char>> board;
         {
             newRow.push_back('.');
         }
-        board.push_back(newRow);
+        board.push_back(newRow);                        
     }
-    ans=nQueen(board, 0);
-    cout<<"Total solutions are: "<<ans;
+    nQueen(board, 0);
     return 0;
 }
