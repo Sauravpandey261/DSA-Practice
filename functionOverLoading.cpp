@@ -1,14 +1,17 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Print{
-    public:
-        void show(int x){
-            cout<<"Int X: "<<x<<endl;
-        }
-          void show(string x){
-            cout<<"String X: "<<x<<endl;
-        }
+class Print
+{
+public:
+    void show(int x)
+    {
+        cout << "Int X: " << x << endl;
+    }
+    void show(string x)
+    {
+        cout << "String X: " << x << endl;
+    }
 };
 int main()
 {
