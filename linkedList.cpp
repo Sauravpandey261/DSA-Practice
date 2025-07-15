@@ -13,6 +13,7 @@ public:
         next = NULL;
     }
 };
+
 class List
 {
     Node *head;
@@ -24,27 +25,42 @@ public:
         head = NULL;
         tail = NULL;
     }
-    void push_front(int val){
-        Node *newNode=new Node(val);
-        if(head==NULL){
-            head=tail=newNode;
-        }
-        else{
-            newNode->next=head;  
-             head=newNode;
-        }
 
+    void push_front(int val)
+    {
+        Node *newNode = new Node(val);
+        if (head == NULL)
+        {
+            head = tail = newNode;
+        }
+        else
+        {
+            newNode->next = head;
+            head = newNode;
+        }
+    }
+
+    void print()
+    {
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << endl;
     }
 };
 
 int main()
 {
+    List ll; // ✅ Correct object declaration
 
-    List ll;
     ll.push_front(3);
     ll.push_front(2);
     ll.push_front(1);
 
+    ll.print(); // Optional: print to see the list output
 
     return 0;
 }
