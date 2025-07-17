@@ -30,6 +30,12 @@ public:
         Node *newNode = new Node(val);
         Node *temp=head;
         for(int i=0;i<pos-1;i++){
+
+            if(temp==NULL){
+                cout<<"Invalid position\n";
+                return;
+            }
+
             temp=temp->next;
         }
         newNode->next=temp->next;
@@ -87,5 +93,8 @@ int main()
 
     ll.insertAtPos(100,3);
     ll.printList();
+
+    ll.insertAtPos(100,30);
+
     return 0;
 }
