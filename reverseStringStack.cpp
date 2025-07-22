@@ -19,7 +19,7 @@ string reverseString(string str){
 
 int main()
 {
-    string str="abcdef";
+    string str="abc";
     cout<<"reverse = "<<reverseString(str)<<endl;
     return 0;
 }
