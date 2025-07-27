@@ -49,7 +49,7 @@ int maxAreaHistogram(vector<int> height) {
 }
 
 int main() {
-    vector<int> height = {2, 1, 5, 6, 2,5};
+    vector<int> height = {2, 1, 5, 6, 2,5,7,3,2};
     cout << "Maximum area in histogram = " << maxAreaHistogram(height) << endl;
     return 0;
 }
