@@ -10,7 +10,8 @@ int maxAreaHistogram(vector<int> height) {
 
     // Next Smaller to Left (NSL)
     for (int i = 0; i < n; i++) {
-        while (!s.empty() && height[s.top()] >= height[i]) {
+        int curr=height[i];
+        while (!s.empty() && height[s.top()] >= curr) {
             s.pop();
         }
         if (s.empty()) {
