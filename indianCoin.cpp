@@ -17,7 +17,7 @@ int getMinChange(vector<int> coins,int V){
 
 int main()
 {
-    vector<int> coin={1,2,5,10,20,50,100,500};
+    vector<int> coin={1,2,5,10,20,50,100,500,2000};
     int V=590;
     getMinChange(coin,V);
 
