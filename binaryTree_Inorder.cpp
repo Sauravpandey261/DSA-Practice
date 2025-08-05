@@ -27,25 +27,6 @@ Node *buildTree(vector<int> nodes){
     return currNode;
 }
 
-void preorder(Node *root){
-    if(root==NULL){
-        return;
-    }
-    cout<<root->data<<" ";
-    preorder(root->left);
-    preorder(root->right);
-
-}
-void postorder(Node *root){
-    if(root==NULL){
-        return;
-    }
-    postorder(root->left);
-    postorder(root->right);
-    cout<<root->data<<" ";
-
-
-}
 void inorder(Node *root){
     if(root==NULL){
         return;
@@ -64,16 +45,7 @@ int main()
 
     // cout<<root->data<<" ";
 
-    cout<<"preorder: ";
-    preorder(root);
-    cout<<endl;
-
-    cout<<"inorder: ";
-    inorder(root);
-    cout<<endl;
-
-    cout<<"postorder: ";
-    postorder(root);
+    inorder(root); 
 
     
     return 0;
